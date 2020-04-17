@@ -41,12 +41,20 @@ def main():
     adresses = adresses.split()
     
     for i in range(0,len(adresses)):
-        reversed_ip = reverse_ip(adresses[i])
-        requested_arr = make_DNS_request(reversed_ip)
-        print(f"The IP address: {adresses[i]} is found in the following Spamhaus public IP zone: ")
+        try:
+            reversed_ip = reverse_ip(adresses[i])
+            requested_arr = make_DNS_request(reversed_ip)
+            print(f"The IP address: {adresses[i]} is found in the following Spamhaus public IP zone: ")
+            
+            for j in range(0,len(requested_arr)):
+                print(f"{requested_arr[j]} - {get_dscpr(requested_arr[j])}")
+        except:
+            print("An exception occurred")
 
-        for j in range(0,len(requested_arr)):
-            print(f"{requested_arr[j]} - {get_dscpr(requested_arr[j])}")
+
+        
+
+        
 
     
 
