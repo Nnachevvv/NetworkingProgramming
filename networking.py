@@ -49,7 +49,7 @@ def main():
             for j in range(0,len(requested_arr)):
                 print(f"{requested_arr[j]} - {get_dscpr(requested_arr[j])}")
         except:
-            print("An exception occurred")
+            print("Wrong IP")
 
 
         
