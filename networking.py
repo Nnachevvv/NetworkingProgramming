@@ -1,6 +1,6 @@
 import socket
 
-
+DNSBL = '.zen.spamhaus.org'
 
 def reverse_ip(ip):
     addr = list(reversed(ip.split('.')))
@@ -9,7 +9,7 @@ def reverse_ip(ip):
 
 
 def make_DNS_request(ip):
-    ip = ip + '.zen.spamhaus.org'
+    ip = ip + DNSBL
     arr=(list( map( lambda x: x[4][0], socket.getaddrinfo( \
      ip,80,type=socket.SOCK_STREAM))))
     print(arr[0])
@@ -51,4 +51,6 @@ def main():
     
 
 
-main()
+
+if __name__ == "__main__":
+    main()
