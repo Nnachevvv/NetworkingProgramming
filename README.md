@@ -4,7 +4,7 @@
 
 Програмата се стартира по следният начин
 ```
-python3 /directory/Networking/networking.py <ip-addres> <ip-addres>
+python3 /directory/Networking/networking.py 
 ```
 Kато след това ще бъдете попитани да подадете Ip address в следният начин
 ```
